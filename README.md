@@ -1,6 +1,4 @@
 # Multi-Threaded-Atkin-Sieve
-===================================================================================================
-ReadMe
 
 Patrick Bauer
 COP 4520 - Concepts of Parallel and Distributed Processing
@@ -8,8 +6,8 @@ COP 4520 - Concepts of Parallel and Distributed Processing
 
 FileName: MainPrime.java
 
-===================================================================================================
-Problem:
+## Problem:
+
 Your non-technical manager assigns you the task to find all primes between 1 and 108.  The 
 assumption is that your company is going to use a parallel machine that supports eight concurrent 
 threads. Thus, in your design you should plan to spawn 8 threads that will perform the necessary 
@@ -27,26 +25,29 @@ Zero and one are neither prime nor composite, so they are not included in the to
 primes found and the sum of all primes found. The execution time starts prior to spawning the
 threads and ends after all threads complete.
 
-===================================================================================================
-Instructions
+## Installation
 
 1. Open a terminal
 2. Navigate to the location of MainPrime.java
 3. Compile the program with the following command:
+```bash
     javac MainPrime.java
+```
 4. Run the compiled program with the following command:
+```bash
     java MainPrime
+```
 
-===================================================================================================
-Output
+## Output
 
 The output of the program is printed to primes.txt with the following format:
 
+```txt
 <execution time> <total number of primes found> <sum of all primes found>
 <top ten maximum primes, listed in order from lowest to highest>
+```
 
-===================================================================================================
-Proof of Correctness
+## Proof of Correctness
 
 This program uses a Java Semaphore lock to only allow 1 of the 8 threads the permit to modify
 values in a boolean array at a time. This prevents the threads from overwriting each others' data.
@@ -58,8 +59,7 @@ The output of the program is proven correct by running a single-threaded brute f
 comparing the results with my multi-threaded program. Each of my program iterations listed below
 all gave the same output for any input for 'maxValue' and 'numberofThreads'.
 
-===================================================================================================
-Experimental Evaluation, Efficiency
+## Experimental Evaluation, Efficiency
 
 Processor Used: Intel® Core™ i7-6700 CPU @ 3.40GHz (4 cores, 8 threads)
 
@@ -104,8 +104,8 @@ the same time.
 
 Execution Time: 121196ms (~2 minutes)
 
+## Roadmap
+
 More work can be done to increase the efficiency of the program by changing the lock system to
 a synchronized method system. This has the potential to decrease the execution time to around 5
 seconds.
-
-===================================================================================================
